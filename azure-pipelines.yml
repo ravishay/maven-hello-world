@@ -22,9 +22,8 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
-- task: Bash@3
+- task: Docker@2
   inputs:
-    targetType: 'inline'
-    script: |
-      ls -la my-app/target/my-app-1.0-SNAPSHOT.jar
-      java -jar my-app/target/my-app-1.0-SNAPSHOT.jar
+    repository: 'ravishay/maven-hello-world'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
