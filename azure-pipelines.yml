@@ -16,4 +16,6 @@ steps:
     script: |
       # Write your commands here
       java -version
+      mvn
+      maven
 
