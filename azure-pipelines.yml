@@ -26,5 +26,4 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls -la
-      ls -la my-app
+      ls -la my-app/target
