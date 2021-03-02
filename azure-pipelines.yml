@@ -26,4 +26,5 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ls -la my-app/target
+      ls -la my-app/target/my-app-1.0-SNAPSHOT.jar
+      java -jar my-app/target/my-app-1.0-SNAPSHOT.jar
