@@ -28,3 +28,9 @@ steps:
     repository: 'ravishay/maven-hello-world'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'ravishay_docker_hub'
+    command: 'start'
+    container: 'ravishay/maven-hello-world:39'
