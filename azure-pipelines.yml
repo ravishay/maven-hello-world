@@ -13,9 +13,9 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'my-app/pom.xml'
+    goals: package
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    testRunTitle: 'testing'
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
@@ -26,6 +26,5 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your commands here
-      
-      ls -la target/
+      ls -la
+      ls -la my-app'
