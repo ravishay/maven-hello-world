@@ -15,6 +15,5 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      ls -la
-      echo 'Hello world'
+      java -version
 
