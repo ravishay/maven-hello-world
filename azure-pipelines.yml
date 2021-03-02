@@ -28,9 +28,19 @@ steps:
     repository: 'ravishay/maven-hello-world'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: latest
+
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'ravishay_docker_hub'
-    command: 'start'
-    container: 'ravishay/maven-hello-world:39'
+    command: 'login'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      docker run ravishay/maven-hello-world:latest
